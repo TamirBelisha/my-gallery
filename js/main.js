@@ -90,8 +90,11 @@ function renderModal(projId) {
 }
 
 function onSubmit() {
+    var $elSubjectVal = $('#form-Subject').val()
+    var $elTextVal = $('#form-text').val()
     var resSubject = $elSubjectVal.split(' ').join('%20')
     var resText = $elTextVal.split(' ').join('%20')
+
     window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=TamirBelisha@gmail.com&su=${resSubject}&body=${resText}`, '_blank')
     $('#form-name').val('')
     $('#form-email').val('')
