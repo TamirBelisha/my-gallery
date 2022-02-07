@@ -1,7 +1,11 @@
 'use strict';
 
 var gProjs = createProjs();
-console.log('gProjs', gProjs);
+
+function getProjs() {
+    return gProjs;
+}
+
 
 function createProjs() {
     return [
