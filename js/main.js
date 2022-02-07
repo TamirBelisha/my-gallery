@@ -15,7 +15,7 @@ function renderProjs() {
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Portfolio</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">Some projects made by me</h3>
             </div>
         </div>
         <div class="row">
@@ -72,6 +72,10 @@ function renderModal(projId) {
                                         <li>Client: Coding Academy</li>
                                         <li>Category: ${proj.title}</li>
                                     </ul>
+                                    <a href="${proj.url}" target="_blank">
+                                    <button class="btn btn-primary" type="button">
+                                    Open Project</button>
+                                    </a>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                         <i class="fa fa-times"></i>
                         Close Project</button>
@@ -83,4 +87,14 @@ function renderModal(projId) {
             </div>
             `
     $('.modal').html(strHtml)
+}
+
+function onSubmit() {
+    var resSubject = $elSubjectVal.split(' ').join('%20')
+    var resText = $elTextVal.split(' ').join('%20')
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=TamirBelisha@gmail.com&su=${resSubject}&body=${resText}`, '_blank')
+    $('#form-name').val('')
+    $('#form-email').val('')
+    $('#form-Subject').val('')
+    $('#form-text').val('')
 }
