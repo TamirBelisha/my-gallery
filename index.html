@@ -29,11 +29,13 @@
     <div class="offcanvas-btn" onClick="openCanvas()">
         <i class="fa fa-comment" aria-hidden="true"></i>
     </div>
-    <aside class="offcanvas-aside">
+    <aside class="offcanvas-aside bg-dark">
 
         <!-- Contact -->
         <section id="contact">
-            <h4>Contact Me</h4>
+            <h3 class="text-light">Contact Me</h3>
+            <h5 class="text-muted">+972-54-263-1200</h5>
+            <h5 class="text-muted">Mail to be here</h5>
         </section>
 
     </aside>
@@ -57,7 +59,7 @@
                         <a class="nav-link js-scroll-trigger" href="#me">Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                        <a class="nav-link js-scroll-trigger" href="#contact" onclick="openCanvas()">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -509,6 +511,8 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
+    <script src="js/services/gallery-service.js"></script>
+    <script src="js/services/util.service.js"></script>
     <script src="js/ca-gallery.js"></script>
     <script src="js/offCanvas.js"></script>
     <script src="js/main.js"></script>
