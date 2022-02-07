@@ -30,7 +30,7 @@ function renderProjs() {
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="img/portfolio/${proj.id} thumbnail.png" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>${proj.name}</h4>
