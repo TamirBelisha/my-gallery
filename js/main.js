@@ -1,9 +1,9 @@
 'use strict';
 console.log('Starting up');
 
-$(onInit)
+$(initPage)
 
-function onInit() {
+function initPage() {
     renderProjs();
 }
 
@@ -24,8 +24,8 @@ function renderProjs() {
     var arrHtml = projs.map((proj) => {
         return `
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal">
+                        <div class="portfolio-hover" onclick="renderModal('${proj.id}')">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
@@ -44,4 +44,43 @@ function renderProjs() {
 
     $elPortfolioSection.html(strHtml);
 
+}
+
+function renderModal(projId) {
+    console.log('projId', projId);
+    console.log('got to render modal');
+    var proj = getProjById(projId)
+    var strHtml = `
+    <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here -->
+                                    <h2>${proj.name}</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.id}.png" alt="">
+                                    <p>${proj.desc}</p>
+                                    <ul class="list-inline">
+                                        <li>Date: ${proj.publishedAt}</li>
+                                        <li>Client: Coding Academy</li>
+                                        <li>Category: ${proj.title}</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        <i class="fa fa-times"></i>
+                        Close Project</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+    $('.modal').html(strHtml)
 }

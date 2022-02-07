@@ -27,3 +27,7 @@ function createProj(projName, title, url, publishedAt) {
         labels: null
     }
 }
+
+function getProjById(projId) {
+    return gProjs.find(proj => proj.id === projId)
+}
