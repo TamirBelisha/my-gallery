@@ -1,7 +1,17 @@
 'use strict';
 
+var gProjs = createProjs();
+console.log('gProjs', gProjs);
 
-function createProj(projName, title, url) {
+function createProjs() {
+    return [
+        createProj('Day 09 tasks', 'Two basic projects', 'https://tamirbelisha.github.io/CaJan22-Day09/', 'January 2022'),
+        createProj('Mine sweeper', 'Board game', 'https://tamirbelisha.github.io/Mine-Sweeper/', 'January 2022'),
+        createProj('Pacman', 'Board game', 'https://tamirbelisha.github.io/CaJan22-Pacman/', 'January 2022'),
+    ]
+}
+
+function createProj(projName, title, url, publishedAt) {
 
     return {
         id: projName.toLowerCase(),
@@ -9,7 +19,7 @@ function createProj(projName, title, url) {
         title,
         desc: makeLorem(12),
         url,
-        publishedAt: Date.now(),
-        labels: ["Matrixes", "keyboard events"],
+        publishedAt,
+        labels: null
     }
 }
